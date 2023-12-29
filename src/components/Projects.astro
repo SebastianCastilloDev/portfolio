@@ -1,0 +1,170 @@
+---
+import { imageConfig } from "astro:assets";
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Html5 from "./icons/Html5.astro";
+import Python from "./icons/Python.astro";
+import Sass from "./icons/Sass.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Javascript from "./icons/Javascript.astro";
+import NodeJS from "./icons/NodeJS.astro";
+import Laravel from "./icons/Laravel.astro";
+import Php from "./icons/Php.astro";
+import ReactJS from "./icons/Reactjs.astro";
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  GITHUB: {
+    name: "GitHub",
+    class: "bg-[#24292e] text-white",
+    icon: GitHub,
+  },
+  HTML5: {
+    name: "HTML5",
+    class: "bg-[#e34c26] text-white",
+    icon: Html5,
+  },
+  PYTHON: {
+    name: "Python",
+    class: "bg-[#3776ab] text-white",
+    icon: Python,
+  },
+  SASS: {
+    name: "Sass",
+    class: "bg-[#3776ab] text-white",
+    icon: Sass,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#5732bf] text-white",
+    icon: Bootstrap,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#ffff00] text-black",
+    icon: Javascript,
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-[#002200] text-white",
+    icon: NodeJS,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-[#550000] text-white",
+    icon: Laravel,
+  },
+  PHP: {
+    name: "PHP",
+    class: "bg-[#777bb3] text-white",
+    icon: Php,
+  },
+  REACTJS: {
+    name: "React.js",
+    class: "bg-[#003159] text-white",
+    icon: ReactJS,
+  },
+};
+const PROJECTS = [
+  {
+    title: "SQL Injection Suite",
+    description:
+      "Este repositorio contiene una aplicacion para resolver laboratorios de sql injection del sitio web portswigger.com. Los ejercicios han sido seleccionados para aplicar la metodologia de desarrollo Extreme Programming (XP)",
+    link: "https://github.com/SebastianCastilloDev/pro204-sqlinjection-metodologia-xp",
+    GitHub:
+      "https://github.com/SebastianCastilloDev/pro204-sqlinjection-metodologia-xp",
+    image: "/projects/sqlinjectionsuite.png",
+    tags: [TAGS.PYTHON],
+  },
+  {
+    title: "Restaurant",
+    description:
+      "Proyecto de práctica de Laravel + React.js. Es un sistema de gestión de restaurantes, con un sistema de pedidos y un sistema de gestión para administración.",
+    link: "https://github.com/SebastianCastilloDev/restaurante-laravel-react",
+    GitHub: "https://github.com/SebastianCastilloDev/restaurante-laravel-react",
+    image: "/projects/restaurant.png",
+    tags: [TAGS.REACTJS, TAGS.LARAVEL, TAGS.TAILWIND],
+  },
+  {
+    title: "Talonarios.cl",
+    description:
+      "Desarrollé por completo el proyecto Talonarios.cl, desde la concepción hasta la implementación y operación. (Actualmente se encuentra inhabilitado por obsolescencia del producto)",
+    link: "https://sebastiancastillodev.github.io/talonarios.cl/",
+    github: "https://github.com/SebastianCastilloDev/talonarios.cl",
+    image: "/projects/talonarioscl.png",
+    tags: [TAGS.HTML5, TAGS.SASS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Imprenta ROM",
+    description:
+      "Sitio web informativo acerca de los servicios que proporcionaba la imprenta.",
+    link: "https://sebastiancastillodev.github.io/imprenta-rom/",
+    github: "https://github.com/SebastianCastilloDev/imprenta-rom",
+    image: "/projects/imprentarom.png",
+    tags: [TAGS.HTML5, TAGS.BOOTSTRAP, TAGS.JAVASCRIPT],
+  },
+  {
+    title: "Generador de folios de InDesign",
+    description:
+      "Es un aplicativo que genera archivos csv, disponibles para ser leídos en indesign y numerar páginas con varios moldes.",
+    link: "https://github.com/SebastianCastilloDev/generador-folios-indesign",
+    github: "https://github.com/SebastianCastilloDev/generador-folios-indesign",
+    image: "/projects/generadorfolios.png",
+    tags: [TAGS.NODEJS],
+  },
+  {
+    title: "Sitio web: Elevadores Diamante",
+    description: "El primer cliente que conseguí",
+    link: "https://elevadoresdiamante.cl/",
+    github: "https://elevadoresdiamante.cl/",
+    image: "/projects/elevadoresdiamante.png",
+    tags: [TAGS.HTML5, TAGS.BOOTSTRAP, TAGS.JAVASCRIPT],
+  },
+];
+---
+
+{
+  PROJECTS.map(({ image, title, description, tags, link, github }) => (
+    <article class="text-white">
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+      <p class="text-lg mb-4 text-pretty">{description}</p>
+
+      <a href={link} target="_blank" class="text-lg mb-2 text-teal-400 block">
+        Enlace
+      </a>
+
+      <a href={github} target="_blank" class="text-lg mb-2 text-teal-400 block">
+        Repositorio
+      </a>
+      <p class="text-lg mb-2">Tecnologías utilizadas:</p>
+      <ul class="flex gap-x-2 flex-row mb-2">
+        {tags.map((tag) => (
+          <li>
+            <span
+              class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 font-bold`}
+            >
+              <tag.icon class="size-4 font" />
+              {tag.name}
+            </span>
+          </li>
+        ))}
+      </ul>
+      <img
+        loading="lazy"
+        class="rounded shadow-2xl shadow-white/10 aspect-video mb-10"
+        src={image}
+        alt={`Captura de pantalla del proyecto ${image}`}
+      />
+    </article>
+  ))
+}

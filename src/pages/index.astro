@@ -1,0 +1,106 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPill.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import MailIcon from "../components/icons/Mail.astro";
+import Briefcase from "../components/icons/Study.astro";
+import CodeIcon from "../components/icons/Code.astro";
+import Projects from "../components/Projects.astro";
+import Formacion from "../components/Formacion.astro";
+import SobreMi from "../components/SobreMi.astro";
+import Study from "../components/icons/Study.astro";
+import Person from "../components/icons/Person.astro";
+---
+
+<Layout
+  title="Portafolio de Sebastián Castillo - Desarrollador Web y programador en varias tecnologías"
+  description="Soy Sebastián Castillo, desarrollador web y creador de contenido. Me apasiona todo el mundo de la tecnología, tengo especial gusto por lenguajes como JavaScript, Python, PHP, Bash Scripting y la seguridad informática a nivel de código."
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-32">
+      <img
+        class="rounded-full size-12 mb-4"
+        src="/foto_sebastian_castillo.png"
+        alt="Sebastián Castillo photo"
+      />
+      <h1
+        class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+      >
+        Sebastián Castillo <a
+          href="https://www.linkedin.com/in/sebastian-castillo-a89432262/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+        >
+          <Badge>Disponible para trabajar</Badge>
+        </a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl text-balance max-w-[700px] text-white">
+        <span class="text-yellow-200"> Desarrollador Web y Programador</span>
+        <span class="text-red-200 block"> Vivo en Santiago, Chile</span>
+        <span class="text-sky-200 block"
+          >Apasionado por la programación en lenguajes tales como Python, C#,
+          Javascript y PHP.
+        </span>
+        <span class="text-indigo-300 block"
+          >Mi sistema operativo favorito es Linux, me gusta la seguridad
+          informática a nivel de código con Python y Bash Scripting.
+        </span>
+      </h2>
+
+      <nav class="flex gap-4 mt-8 flex-wrap text-white">
+        <SocialPill
+          href="https://www.linkedin.com/in/sebastian-castillo-a89432262/"
+        >
+          <LinkedInIcon class="size-4 md:size-6" />
+           LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/SebastianCastilloDev">
+          <GitHubIcon class="size-4 md:size-6" />
+           GitHub
+        </SocialPill>
+        <SocialPill href="mailto:tantrum5535@gmail.com">
+          <MailIcon class="size-4 md:size-6" />
+           tantrum5535@gmail.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer id="proyectos">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white"
+      >
+        <CodeIcon class="size-7" />
+         Proyectos
+      </h2>
+      <h3 class="text-l mb-6 text-white">
+        Este listado de proyectos se caracteriza por haber sido desarrollados
+        completamente con los conocimientos adquiridos durante mi formación
+        autodidacta.
+      </h3>
+      <Projects />
+    </SectionContainer>
+
+    <SectionContainer id="formacion">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white"
+      >
+        <Study class="size-7" />
+         Formación Académica
+      </h2>
+      <Formacion />
+    </SectionContainer>
+    <SectionContainer id="sobre-mi">
+      <h2
+        class="text-3xl font-semibold mb-6 flex gap-x-3 items-center text-white"
+      >
+        <Person class="size-7" />
+         Sobre Mi
+      </h2>
+      <SobreMi />
+    </SectionContainer>
+  </main>
+</Layout>

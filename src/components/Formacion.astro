@@ -1,0 +1,28 @@
+---
+import FormacionItem from "./FormacionItem.astro";
+const experience = [
+  {
+    date: "Actualmente...",
+    title: "Formación autodidacta constante",
+    description:
+      "Constantemente me encuentro estudiando temas de interés relacionados a los items mostrados en la sección de proyectos. A lo largo del tiempo he acumulado diplomas y certificados en diferentes plataformas",
+    link: "https://www.linkedin.com/in/sebastian-castillo-a89432262/details/certifications/",
+  },
+  {
+    date: "Marzo 2023",
+    title: "Programación y análisis de sistemas",
+    description:
+      "Actualmente me encuentro cursando la carrera de programación y análisis de sistemas en Instituto Profesional AIEP",
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    experience.map((experience) => (
+      <li class="mb-10 ms-4">
+        <FormacionItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
