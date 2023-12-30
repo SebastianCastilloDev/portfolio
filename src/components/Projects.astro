@@ -12,6 +12,7 @@ import NodeJS from "./icons/NodeJS.astro";
 import Laravel from "./icons/Laravel.astro";
 import Php from "./icons/Php.astro";
 import ReactJS from "./icons/Reactjs.astro";
+import MySQL from "./icons/MySQL.astro";
 
 const TAGS = {
   NEXT: {
@@ -50,7 +51,7 @@ const TAGS = {
     icon: Bootstrap,
   },
   JAVASCRIPT: {
-    name: "JavaScript",
+    name: "Javascript",
     class: "bg-[#ffff00] text-black",
     icon: Javascript,
   },
@@ -74,14 +75,26 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: ReactJS,
   },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#4479a1] text-white",
+    icon: MySQL,
+  },
 };
 const PROJECTS = [
+  {
+    title: "Sistema de calificaciones para una escuela",
+    description:
+      "Proyecto realizado para una escuela ubicada en la ciudad de Santiago, Chile. La aplicación fue realizada en una hoja de cálculo Google Sheets, a petición del cliente. La tecnología escogida es Google Apps Script.",
+    github: "https://github.com/SebastianCastilloDev/LibroDeNotasEscuela",
+    image: "/projects/sistemadecalificaciones.png",
+    tags: [TAGS.JAVASCRIPT],
+  },
   {
     title: "SQL Injection Suite",
     description:
       "Este repositorio contiene una aplicacion para resolver laboratorios de sql injection del sitio web portswigger.com. Los ejercicios han sido seleccionados para aplicar la metodologia de desarrollo Extreme Programming (XP)",
-    link: "https://github.com/SebastianCastilloDev/pro204-sqlinjection-metodologia-xp",
-    GitHub:
+    github:
       "https://github.com/SebastianCastilloDev/pro204-sqlinjection-metodologia-xp",
     image: "/projects/sqlinjectionsuite.png",
     tags: [TAGS.PYTHON],
@@ -90,10 +103,9 @@ const PROJECTS = [
     title: "Restaurant",
     description:
       "Proyecto de práctica de Laravel + React.js. Es un sistema de gestión de restaurantes, con un sistema de pedidos y un sistema de gestión para administración.",
-    link: "https://github.com/SebastianCastilloDev/restaurante-laravel-react",
-    GitHub: "https://github.com/SebastianCastilloDev/restaurante-laravel-react",
+    github: "https://github.com/SebastianCastilloDev/restaurante-laravel-react",
     image: "/projects/restaurant.png",
-    tags: [TAGS.REACTJS, TAGS.LARAVEL, TAGS.TAILWIND],
+    tags: [TAGS.REACTJS, TAGS.LARAVEL, TAGS.TAILWIND, TAGS.MYSQL],
   },
   {
     title: "Talonarios.cl",
@@ -138,10 +150,11 @@ const PROJECTS = [
     <article class="text-white">
       <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
       <p class="text-lg mb-4 text-pretty">{description}</p>
-
-      <a href={link} target="_blank" class="text-lg mb-2 text-teal-400 block">
-        Enlace
-      </a>
+      {link && (
+        <a href={link} target="_blank" class="text-lg mb-2 text-teal-400 block">
+          Enlace
+        </a>
+      )}
 
       <a href={github} target="_blank" class="text-lg mb-2 text-teal-400 block">
         Repositorio
